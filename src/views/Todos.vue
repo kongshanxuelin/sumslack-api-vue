@@ -36,8 +36,8 @@ export default {
             }
         },
         logout(){
-            this.$store.commit('logout');
-            this.$router.push({path:'/'});
+            this.$store.commit('logout',this);
+            
         },
         login(){
             this.$router.push({path:'/login'});

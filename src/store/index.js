@@ -50,12 +50,14 @@ export default new Vuex.Store({
       //添加认证头信息
       //this.$http.defaults.headers.common['Authorization'] = "Bearer " + token;
     },
-    [LOGOUT](state){
-      console.log("xxxx")
-      if(sessionStorage.getItem("token") && sessionStorage.getItem("token")!=null){
-        console.log("xxxx4444")
+    [LOGOUT](state,vm){
+      console.log("logout",localStorage.getItem("token"),sessionStorage.getItem("token"));
+      if(localStorage.getItem("token")!=null || sessionStorage.getItem("token")!=null){
+        localStorage.removeItem("token");
         sessionStorage.removeItem("token");
         state.token = null;
+        this.commit("clearList");
+        vm.$router.push({path:'/'});
         //移除认证头信息
         //this.$http.defaults.headers.common['Authorization'] = null;
       }

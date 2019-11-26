@@ -7,3 +7,9 @@
 
 
 ![image](http://h5.sumslack.com/todo.png)
+
+# 运行项目
+
+- 安装依赖：`npm i`
+
+- 运行程序：`npm run serve`
