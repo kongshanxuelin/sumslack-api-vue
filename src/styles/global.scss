@@ -1,0 +1,41 @@
+@import "reset.scss";
+
+$main-color: #04c992;
+
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 16px;
+}
+a {
+    display: block;
+    text-decoration: none;
+    color: #444444;
+}
+button {
+    border: none;
+    background: none;
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+h1 {
+    font: {
+        size: 2em;
+        weight: bold;
+    }
+    color: #fff;
+    text-align: center;
+}
+
+.site {
+    height: 100%;
+    min-height: 100vh;
+    overflow: auto;
+    background: linear-gradient(210deg, lighten($main-color, 20%), $main-color);
+}
